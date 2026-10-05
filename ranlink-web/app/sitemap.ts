@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SITIO_URL } from "./lib/constants";
+import { RUTAS } from "./lib/rutas";
 
 export const dynamic = "force-static";
 
-/** Al agregar una ruta nueva, añádela también aquí. */
+/** Las rutas salen de app/lib/rutas.ts: al agregar una página, regístrala ahí. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: `${SITIO_URL}/`, lastModified: new Date() }];
+  return Object.values(RUTAS).map((ruta) => ({ url: `${SITIO_URL}${ruta}`, lastModified: new Date() }));
 }

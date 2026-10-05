@@ -9,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Wifi, Home, Tv, ShieldCheck } from "lucide-react";
+import { Building2, Headset, Home, MapPin } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 
 export function ServicesCarousel() {
@@ -17,42 +17,44 @@ export function ServicesCarousel() {
     Autoplay({ delay: 4000, stopOnInteraction: true })
   );
 
+  // Textos descriptivos, sin promesas de velocidad, tecnología ni cobertura:
+  // esos datos dependen de la empresa y siguen pendientes.
   const slides = [
     {
-      title: "Internet de Alta Velocidad",
-      description: "Conexión estable para tu hogar y oficina.",
-      icon: Wifi,
-      color: "bg-primary/20",
-      textColor: "text-primary"
-    },
-    {
-      title: "Entretenimiento sin límites",
-      description: "Disfruta de streaming en 4K sin interrupciones.",
-      icon: Tv,
-      color: "bg-secondary/20",
-      textColor: "text-secondary"
-    },
-    {
-      title: "Cobertura Total",
-      description: "Llegamos a donde otros no llegan.",
+      title: "Internet para tu hogar",
+      description: "Planes pensados para conectar a toda la familia.",
       icon: Home,
-      color: "bg-orange-500/20",
-      textColor: "text-orange-500"
+      color: "bg-primary/15",
+      textColor: "text-primary",
     },
     {
-      title: "Soporte Local",
-      description: "Atención rápida y personalizada.",
-      icon: ShieldCheck,
-      color: "bg-blue-500/20",
-      textColor: "text-blue-500"
-    }
+      title: "Internet para tu negocio",
+      description: "Conectividad para empresas, con cotización a la medida.",
+      icon: Building2,
+      color: "bg-secondary/15",
+      textColor: "text-secondary",
+    },
+    {
+      title: "Consulta tu cobertura",
+      description: "Verifica si hay servicio en tu domicilio antes de contratar.",
+      icon: MapPin,
+      color: "bg-brand-cian/15",
+      textColor: "text-primary-glow",
+    },
+    {
+      title: "Atención a clientes",
+      description: "Resolvemos tus dudas sobre contratación, pagos y soporte.",
+      icon: Headset,
+      color: "bg-brand-azul/15",
+      textColor: "text-brand-azul dark:text-brand-cielo",
+    },
   ];
 
   return (
-    <section className="py-12 bg-background/50">
-      <div className="container mx-auto px-6">
+    <section className="bg-card py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 gradient-text">
-          Nuestros Servicios en Acción
+          Todo lo que necesitas para conectarte
         </h2>
         <div className="flex justify-center">
           <Carousel
