@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Clock, MapPin, Phone, Wallet } from "lucide-react";
+import { Clock, ExternalLink, MapPin, Phone, Wallet } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "../SectionHeader";
 import { BloquePendiente } from "../BloquePendiente";
@@ -7,6 +7,8 @@ import { Dato } from "../Pendiente";
 import {
   DOMICILIO,
   HORARIO,
+  MAPA_EMBED_URL,
+  MAPA_URL,
   NOMBRE_COMERCIAL,
   TELEFONO,
   ZONAS_COBERTURA,
@@ -110,14 +112,24 @@ export function CoverageSection() {
             {esPendiente(DOMICILIO) ? (
               <BloquePendiente titulo="Ubicación del centro de atención pendiente" className="min-h-[320px]" />
             ) : (
-              <div className="min-h-[320px] overflow-hidden rounded-2xl border border-border">
+              <div className="flex min-h-[320px] flex-col overflow-hidden rounded-2xl border border-border">
                 <iframe
                   title={`Ubicación del centro de atención de ${NOMBRE_COMERCIAL}`}
-                  src={`https://www.google.com/maps?q=${encodeURIComponent(DOMICILIO)}&output=embed`}
+                  src={MAPA_EMBED_URL}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="h-full min-h-[320px] w-full border-0"
+                  className="min-h-[320px] w-full flex-1 border-0"
                 />
+                <a
+                  href={MAPA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 border-t border-border bg-background px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-muted"
+                >
+                  <MapPin className="h-4 w-4" />
+                  Abrir en Google Maps
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
               </div>
             )}
           </div>

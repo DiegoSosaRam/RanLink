@@ -115,7 +115,7 @@ export default function TerminosCondicionesPage() {
                   <TableRow>
                     <TableHead className="font-bold text-foreground">Plan {NOMBRE_COMERCIAL}</TableHead>
                     <TableHead className="font-bold text-foreground">Registro CRT</TableHead>
-                    <TableHead className="font-bold text-foreground">Mensualidad (IVA incluido)</TableHead>
+                    <TableHead className="font-bold text-foreground">Mensualidad</TableHead>
                     <TableHead className="text-center font-bold text-foreground">Velocidad</TableHead>
                   </TableRow>
                 </TableHeader>

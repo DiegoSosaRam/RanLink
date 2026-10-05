@@ -67,7 +67,7 @@ export function FormularioContratacion() {
       "Nombre completo": datos.nombre.trim(),
       "Teléfono": datos.telefono.trim(),
       "Correo electrónico": datos.correo.trim(),
-      "Plan de interés": plan ? `${plan.nombre} (${plan.velocidad})` : "Aún no sé / quiero información",
+      "Plan de interés": plan ? `${plan.nombre} (${plan.precio} al mes)` : "Aún no sé / quiero información",
       "Domicilio o referencia de instalación": datos.domicilio.trim(),
       "Mensaje": datos.mensaje.trim(),
     });
@@ -108,7 +108,7 @@ export function FormularioContratacion() {
             <SelectItem value={SIN_PLAN}>Aún no sé / quiero información</SelectItem>
             {PLANES.map((p) => (
               <SelectItem key={p.nombre} value={p.nombre}>
-                {p.nombre} — {p.velocidad}
+                {p.nombre} — {p.precio} al mes
               </SelectItem>
             ))}
           </SelectContent>

@@ -16,10 +16,23 @@ export const NOMBRE_COMERCIAL = 'Ranlink';
 export const TITULAR = 'PENDIENTE';
 export const RFC = 'PENDIENTE';
 
-/** Domicilio del centro de atención a clientes y domicilio legal. */
-export const DOMICILIO = 'PENDIENTE';
+/**
+ * Domicilio del centro de atención a clientes (esquina Allende y Constitución).
+ * Pendiente confirmar si también es el domicilio legal que va en contratos.
+ */
+export const DOMICILIO = 'Allende, San Jerónimo, 70110 Cd. Ixtepec, Oax.';
 /** Versión corta para espacios reducidos. */
-export const DOMICILIO_CORTO = 'PENDIENTE';
+export const DOMICILIO_CORTO = 'Cd. Ixtepec, Oax.';
+
+/**
+ * Plus Code de Google del centro de atención. Se usa para el mapa porque es
+ * más preciso que la dirección escrita, que no tiene número exterior.
+ */
+export const UBICACION_PLUS_CODE = 'HV6X+47 Cd. Ixtepec, Oaxaca';
+/** Mapa embebido de Google Maps (no requiere clave de API). */
+export const MAPA_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(UBICACION_PLUS_CODE)}&output=embed`;
+/** Enlace para abrir la ubicación en Google Maps o en la app del teléfono. */
+export const MAPA_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(UBICACION_PLUS_CODE)}`;
 
 export const HORARIO = 'PENDIENTE';
 
@@ -79,8 +92,15 @@ export interface Plan {
   destacado?: boolean;
 }
 
-/** Planes vigentes. Vacío hasta tener precios y folios inscritos. */
-export const PLANES: Plan[] = [];
+/**
+ * Planes vigentes, de menor a mayor velocidad. Precio mensual en MXN.
+ * Pendiente: folio de cada tarifa, si el precio incluye IVA y la tecnología.
+ */
+export const PLANES: Plan[] = [
+  { nombre: 'Plan 60 Megas', velocidad: '60 Megas', precio: '$300', folioTarifa: 'PENDIENTE', caracteristicas: [] },
+  { nombre: 'Plan 80 Megas', velocidad: '80 Megas', precio: '$450', folioTarifa: 'PENDIENTE', caracteristicas: [] },
+  { nombre: 'Plan 100 Megas', velocidad: '100 Megas', precio: '$550', folioTarifa: 'PENDIENTE', caracteristicas: [] },
+];
 
 /** Costo único de instalación o contratación. */
 export const COSTO_INSTALACION = 'PENDIENTE';

@@ -23,7 +23,7 @@ const SECCIONES = [
       { label: "Internet empresarial", href: RUTAS.empresarial },
       // Un enlace por plan vigente; mientras no haya planes, uno genérico.
       ...(PLANES.length > 0
-        ? PLANES.map((plan) => ({ label: `${plan.nombre} · ${plan.velocidad}`, href: "/#planes" }))
+        ? PLANES.map((plan) => ({ label: plan.nombre, href: "/#planes" }))
         : [{ label: "Planes", href: "/#planes" }]),
       { label: "Cobertura", href: "/#cobertura" },
     ],

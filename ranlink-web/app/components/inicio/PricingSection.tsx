@@ -33,7 +33,7 @@ export function PricingSection() {
             </Button>
           </BloquePendiente>
         ) : (
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className={cn("mx-auto grid grid-cols-1 gap-8 sm:grid-cols-2", PLANES.length === 3 ? "max-w-6xl lg:grid-cols-3" : "max-w-7xl lg:grid-cols-4")}>
             {PLANES.map((plan) => (
               <div
                 key={plan.nombre}
@@ -48,7 +48,7 @@ export function PricingSection() {
                   </div>
                 )}
                 <div className="bg-gradient-to-br from-brand-azul to-brand-cielo px-6 py-6 text-center">
-                  <p className="mb-1 text-xs font-bold uppercase tracking-widest text-white/90">{plan.tecnologia ?? plan.nombre}</p>
+                  <p className="mb-1 text-xs font-bold uppercase tracking-widest text-white/90">{plan.tecnologia ?? "Internet"}</p>
                   <p className="text-4xl font-black text-white">{plan.velocidad}</p>
                 </div>
                 <div className="flex flex-1 flex-col p-8">
@@ -58,6 +58,7 @@ export function PricingSection() {
                     <p className="mt-2 text-xs text-muted-foreground">Folio de tarifa: <Dato valor={plan.folioTarifa} /></p>
                   </div>
                   <ul className="mb-8 flex-1 space-y-4">
+                    {/* Las características de cada plan están pendientes. */}
                     {plan.caracteristicas.map((c) => (
                       <li key={c} className="flex items-start gap-3">
                         <span className="mt-1 rounded-full bg-primary/10 p-1">
