@@ -1,5 +1,5 @@
 /**
- * Datos oficiales de RaLink.
+ * Datos oficiales de Ranlink.
  *
  * Todo dato del negocio vive aquí y NUNCA se escribe directo en una página:
  * en el proyecto anterior llegaron a convivir tres domicilios distintos por
@@ -10,7 +10,7 @@
  * bancario con apariencia real puede provocar daños reales.
  */
 
-export const NOMBRE_COMERCIAL = 'RaLink';
+export const NOMBRE_COMERCIAL = 'Ranlink';
 
 /** Titular de la autorización (persona física o moral). */
 export const TITULAR = 'PENDIENTE';
